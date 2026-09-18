@@ -1,0 +1,19 @@
+server:
+  shutdown: graceful
+
+spring:
+  application:
+    name: nebius-sre-api
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
