@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello() {
-        return "Nebius SRE API is running!";
+        return "Java Cloud Compiler API is running!";
     }
 }
