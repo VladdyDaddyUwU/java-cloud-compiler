@@ -3,9 +3,19 @@ server:
 
 spring:
   application:
-    name: nebius-sre-api
+    name: java-cloud-compiler
   lifecycle:
     timeout-per-shutdown-phase: 20s
+  datasource:
+    url: jdbc:postgresql://postgres:5432/appdb
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 management:
   endpoints:

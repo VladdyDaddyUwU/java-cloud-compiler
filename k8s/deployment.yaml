@@ -16,10 +16,13 @@ spec:
     spec:
       containers:
         - name: app
-          image: demo:1.0
+          image: demo:3.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: postgres-secret
           resources:
             requests:
               cpu: "250m"
