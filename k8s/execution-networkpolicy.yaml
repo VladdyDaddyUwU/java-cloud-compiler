@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all-execution
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: code-execution
+  policyTypes:
+    - Ingress
+    - Egress
+  # No ingress rules = deny all incoming
+  # No egress rules = deny all outgoing

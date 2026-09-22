@@ -33,7 +33,7 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already taken");
         }
 
-        // Hash the password before storing — never store the raw password
+        // Hash the password before storing. Never store the raw password
         String hashed = passwordEncoder.encode(request.getPassword());
         User user = new User(request.getUsername(), hashed);
         userRepository.save(user);
